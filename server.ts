@@ -1,15 +1,14 @@
 import express, { Request, Response } from 'express';
 import path from 'path';
 import fs from 'fs';
-import { fileURLToPath } from 'url';
+
 import { createServer as createViteServer } from 'vite';
 import dotenv from 'dotenv';
 import { GoogleGenAI } from '@google/genai';
 
 dotenv.config();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const rootDir = process.cwd();
 
 const app = express();
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
@@ -36,7 +35,7 @@ interface StoredGeneration {
   analysis?: any;
 }
 
-const HISTORY_FILE = path.join(__dirname, 'history_data.json');
+const HISTORY_FILE = path.join(rootDir, 'history_data.json');
 
 function loadHistory(): StoredGeneration[] {
   try {
