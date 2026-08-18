@@ -1,0 +1,7 @@
+{
+  "name": "DreamCanvas AI - Stable Diffusion Generator",
+  "description": "A full-stack Generative AI image generation platform with prompt enhancement, prompt analysis, diffusion parameter tuning, metadata tracking, and academic defense guide.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
